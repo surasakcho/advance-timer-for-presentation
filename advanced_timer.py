@@ -132,7 +132,7 @@ def create_section_timer(
         )
 
         overall_center_x, overall_center_y = width // 2, 560
-        overall_radius = 300
+        overall_radius = 374
         ring_thickness = 40
 
         # Multicolor overall pie ring: each section occupies its proportional arc
@@ -221,7 +221,7 @@ def create_section_timer(
         cv2.circle(frame, (overall_center_x, overall_center_y), 10, (255, 255, 255), -1)
 
         # Overall digital timer inside the pie ring
-        overall_time_scale = 3.3
+        overall_time_scale = 7.5
         overall_time_thickness = 8
         overall_size = cv2.getTextSize(overall_time_str, font, overall_time_scale, overall_time_thickness)[0]
         overall_x = overall_center_x - overall_size[0] // 2
@@ -234,7 +234,7 @@ def create_section_timer(
         cv2.putText(
             frame,
             elapsed_label,
-            (overall_center_x - elapsed_size[0] // 2, overall_center_y + 115),
+            (overall_center_x - elapsed_size[0] // 2, overall_center_y + 175),
             font,
             elapsed_scale,
             (190, 190, 190),
@@ -297,34 +297,34 @@ if __name__ == "__main__":
     )
     
     
-    # presentation_flow = [
-    #     {"name": "Opening Remarks", "duration_minutes": 15, "color": (255, 100, 100)},        
-    # ]
+    presentation_flow = [
+        {"name": "Opening Remarks", "duration_minutes": 15, "color": (255, 100, 100)},        
+    ]
     
-    # create_section_timer(
-    #     presentation_flow,
-    #     output_filename="timer_opening_15mins.mp4",
-    #     render_mode="ultra_fast",
-    # )
+    create_section_timer(
+        presentation_flow,
+        output_filename="timer_opening_15mins.mp4",
+        render_mode="ultra_fast",
+    )
     
     
-    # presentation_flow = [
-    #     {"name": "Keynote", "duration_minutes": 60, "color": (255, 100, 100)},        
-    # ]
+    presentation_flow = [
+        {"name": "Keynote", "duration_minutes": 60, "color": (255, 100, 100)},        
+    ]
     
-    # create_section_timer(
-    #     presentation_flow,
-    #     output_filename="timer_keynote_60mins.mp4",
-    #     render_mode="ultra_fast",
-    # )
+    create_section_timer(
+        presentation_flow,
+        output_filename="timer_keynote_60mins.mp4",
+        render_mode="ultra_fast",
+    )
     
-    # presentation_flow = [
-    #     {"name": "Policy Panel", "duration_minutes": 75, "color": (255, 100, 100)},        
-    # ]
+    presentation_flow = [
+        {"name": "Policy Panel", "duration_minutes": 75, "color": (255, 100, 100)},        
+    ]
     
-    # create_section_timer(
-    #     presentation_flow,
-    #     output_filename="timer_policy_panel_75mins.mp4",
-    #     render_mode="ultra_fast",
-    # )
+    create_section_timer(
+        presentation_flow,
+        output_filename="timer_policy_panel_75mins.mp4",
+        render_mode="ultra_fast",
+    )
     
